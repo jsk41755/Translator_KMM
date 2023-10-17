@@ -1,6 +1,6 @@
 package com.devjeong.translator_kmm.translate.domain.translate
 
-enum class TranslateError  {
+enum class TranslateError {
     SERVICE_UNAVAILABLE,
     CLIENT_ERROR,
     SERVER_ERROR,
