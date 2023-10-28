@@ -31,7 +31,7 @@ class SqlDelightHistoryDataSource(
         queries.insertHistoryEntity(
             id = item.id,
             fromLanguageCode = item.fromLanguageCode,
-            fromText = item.fromLanguageCode,
+            fromText = item.fromText,
             toLanguageCode = item.toLanguageCode,
             toText = item.toText,
             timestamp = Clock.System.now().toEpochMilliseconds()
