@@ -194,6 +194,7 @@ private fun IdleTranslateTextField(
                 color = MaterialTheme.colors.onSurface
             )
         )
+
         if(fromText.isEmpty() && !isFocused) {
             Text(
                 text = stringResource(
