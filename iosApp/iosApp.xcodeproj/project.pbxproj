@@ -23,6 +23,7 @@
 		C91C61E92AF667CC00F8793F /* ProgressButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91C61E82AF667CC00F8793F /* ProgressButton.swift */; };
 		C91C61EB2AF6695400F8793F /* TranslateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91C61EA2AF6695400F8793F /* TranslateTextField.swift */; };
 		C91C61ED2AF687AC00F8793F /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91C61EC2AF687AC00F8793F /* TextToSpeech.swift */; };
+		C91C61EF2AF6911500F8793F /* TranslateHistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91C61EE2AF6911500F8793F /* TranslateHistoryItem.swift */; };
 		C98D7B8E2AF2996200D5EBEE /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D7B8D2AF2996200D5EBEE /* Colors.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		C91C61E82AF667CC00F8793F /* ProgressButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressButton.swift; sourceTree = "<group>"; };
 		C91C61EA2AF6695400F8793F /* TranslateTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateTextField.swift; sourceTree = "<group>"; };
 		C91C61EC2AF687AC00F8793F /* TextToSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
+		C91C61EE2AF6911500F8793F /* TranslateHistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateHistoryItem.swift; sourceTree = "<group>"; };
 		C98D7B8D2AF2996200D5EBEE /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		E1F73CD2DA869F41B18F452A /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -148,6 +150,7 @@
 				C91C61E62AF6660F00F8793F /* LanguageDisplay.swift */,
 				C91C61E82AF667CC00F8793F /* ProgressButton.swift */,
 				C91C61EA2AF6695400F8793F /* TranslateTextField.swift */,
+				C91C61EE2AF6911500F8793F /* TranslateHistoryItem.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				C919C7752AF629F5004B0E33 /* TranslateScreen.swift in Sources */,
 				C91C61ED2AF687AC00F8793F /* TextToSpeech.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
+				C91C61EF2AF6911500F8793F /* TranslateHistoryItem.swift in Sources */,
 				C91C61EB2AF6695400F8793F /* TranslateTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
