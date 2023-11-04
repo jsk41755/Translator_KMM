@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,12 @@
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		54652158B7999DCF591531F4 /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F73CD2DA869F41B18F452A /* Pods_iosApp.framework */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
+		C919C76B2AF6201B004B0E33 /* LanguageDropDownItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919C76A2AF6201B004B0E33 /* LanguageDropDownItem.swift */; };
+		C919C76D2AF62531004B0E33 /* LanguageDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919C76C2AF62531004B0E33 /* LanguageDropDown.swift */; };
+		C919C76F2AF626FD004B0E33 /* SmallLanguageIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919C76E2AF626FD004B0E33 /* SmallLanguageIcon.swift */; };
+		C919C7712AF628E2004B0E33 /* SwapLanguageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919C7702AF628E2004B0E33 /* SwapLanguageButton.swift */; };
+		C919C7732AF629DD004B0E33 /* IOSTranslateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919C7722AF629DD004B0E33 /* IOSTranslateViewModel.swift */; };
+		C919C7752AF629F5004B0E33 /* TranslateScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919C7742AF629F5004B0E33 /* TranslateScreen.swift */; };
 		C98D7B8E2AF2996200D5EBEE /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D7B8D2AF2996200D5EBEE /* Colors.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +30,12 @@
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		879A95D71BB5F2BA37998DA1 /* Pods-iosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.debug.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.debug.xcconfig"; sourceTree = "<group>"; };
 		8AA2BF3EBAB630584BF8FC79 /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
+		C919C76A2AF6201B004B0E33 /* LanguageDropDownItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageDropDownItem.swift; sourceTree = "<group>"; };
+		C919C76C2AF62531004B0E33 /* LanguageDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageDropDown.swift; sourceTree = "<group>"; };
+		C919C76E2AF626FD004B0E33 /* SmallLanguageIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallLanguageIcon.swift; sourceTree = "<group>"; };
+		C919C7702AF628E2004B0E33 /* SwapLanguageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapLanguageButton.swift; sourceTree = "<group>"; };
+		C919C7722AF629DD004B0E33 /* IOSTranslateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSTranslateViewModel.swift; sourceTree = "<group>"; };
+		C919C7742AF629F5004B0E33 /* TranslateScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateScreen.swift; sourceTree = "<group>"; };
 		C98D7B8D2AF2996200D5EBEE /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		E1F73CD2DA869F41B18F452A /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -69,6 +81,7 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
+				C919C7672AF61FDA004B0E33 /* translate */,
 				C98D7B8B2AF298EC00D5EBEE /* core */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
 				7555FF82242A565900829871 /* ContentView.swift */,
@@ -94,6 +107,35 @@
 				E1F73CD2DA869F41B18F452A /* Pods_iosApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C919C7672AF61FDA004B0E33 /* translate */ = {
+			isa = PBXGroup;
+			children = (
+				C919C7682AF61FE8004B0E33 /* presentation */,
+			);
+			path = translate;
+			sourceTree = "<group>";
+		};
+		C919C7682AF61FE8004B0E33 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C919C7692AF61FF6004B0E33 /* components */,
+				C919C7722AF629DD004B0E33 /* IOSTranslateViewModel.swift */,
+				C919C7742AF629F5004B0E33 /* TranslateScreen.swift */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		C919C7692AF61FF6004B0E33 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				C919C76A2AF6201B004B0E33 /* LanguageDropDownItem.swift */,
+				C919C76C2AF62531004B0E33 /* LanguageDropDown.swift */,
+				C919C76E2AF626FD004B0E33 /* SmallLanguageIcon.swift */,
+				C919C7702AF628E2004B0E33 /* SwapLanguageButton.swift */,
+			);
+			path = components;
 			sourceTree = "<group>";
 		};
 		C98D7B8B2AF298EC00D5EBEE /* core */ = {
@@ -124,6 +166,7 @@
 				7555FF77242A565900829871 /* Sources */,
 				7555FF79242A565900829871 /* Resources */,
 				52AE89E68F9ECF9094F7AB0B /* Frameworks */,
+				1670F1CA50367ACD5355E7D7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -180,6 +223,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1670F1CA50367ACD5355E7D7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iosApp/Pods-iosApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iosApp/Pods-iosApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iosApp/Pods-iosApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		BB820F510A9E6030EE31FCD0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -227,7 +287,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
+				C919C76B2AF6201B004B0E33 /* LanguageDropDownItem.swift in Sources */,
+				C919C76F2AF626FD004B0E33 /* SmallLanguageIcon.swift in Sources */,
+				C919C7732AF629DD004B0E33 /* IOSTranslateViewModel.swift in Sources */,
+				C919C76D2AF62531004B0E33 /* LanguageDropDown.swift in Sources */,
+				C919C7712AF628E2004B0E33 /* SwapLanguageButton.swift in Sources */,
 				C98D7B8E2AF2996200D5EBEE /* Colors.swift in Sources */,
+				C919C7752AF629F5004B0E33 /* TranslateScreen.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
