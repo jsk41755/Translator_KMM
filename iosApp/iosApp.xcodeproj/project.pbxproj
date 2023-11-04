@@ -22,6 +22,7 @@
 		C91C61E72AF6660F00F8793F /* LanguageDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91C61E62AF6660F00F8793F /* LanguageDisplay.swift */; };
 		C91C61E92AF667CC00F8793F /* ProgressButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91C61E82AF667CC00F8793F /* ProgressButton.swift */; };
 		C91C61EB2AF6695400F8793F /* TranslateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91C61EA2AF6695400F8793F /* TranslateTextField.swift */; };
+		C91C61ED2AF687AC00F8793F /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91C61EC2AF687AC00F8793F /* TextToSpeech.swift */; };
 		C98D7B8E2AF2996200D5EBEE /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D7B8D2AF2996200D5EBEE /* Colors.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		C91C61E62AF6660F00F8793F /* LanguageDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageDisplay.swift; sourceTree = "<group>"; };
 		C91C61E82AF667CC00F8793F /* ProgressButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressButton.swift; sourceTree = "<group>"; };
 		C91C61EA2AF6695400F8793F /* TranslateTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateTextField.swift; sourceTree = "<group>"; };
+		C91C61EC2AF687AC00F8793F /* TextToSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
 		C98D7B8D2AF2996200D5EBEE /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		E1F73CD2DA869F41B18F452A /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -131,6 +133,7 @@
 				C919C7692AF61FF6004B0E33 /* components */,
 				C919C7722AF629DD004B0E33 /* IOSTranslateViewModel.swift */,
 				C919C7742AF629F5004B0E33 /* TranslateScreen.swift */,
+				C91C61EC2AF687AC00F8793F /* TextToSpeech.swift */,
 			);
 			path = presentation;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				C919C7712AF628E2004B0E33 /* SwapLanguageButton.swift in Sources */,
 				C98D7B8E2AF2996200D5EBEE /* Colors.swift in Sources */,
 				C919C7752AF629F5004B0E33 /* TranslateScreen.swift in Sources */,
+				C91C61ED2AF687AC00F8793F /* TextToSpeech.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 				C91C61EB2AF6695400F8793F /* TranslateTextField.swift in Sources */,
 			);
@@ -438,8 +442,10 @@
 			baseConfigurationReference = 879A95D71BB5F2BA37998DA1 /* Pods-iosApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
+				DEVELOPMENT_TEAM = ZCD782KS39;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -463,8 +469,9 @@
 					shared,
 					"-lsqlite3",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = orgIdentifier.iosApp;
+				PRODUCT_BUNDLE_IDENTIFIER = identifier.iosApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -475,8 +482,10 @@
 			baseConfigurationReference = 8AA2BF3EBAB630584BF8FC79 /* Pods-iosApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -502,6 +511,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = orgIdentifier.iosApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
