@@ -1,10 +1,9 @@
-package com.devjeong.translator_kmm.android.voice_to_text.presentation
+package com.devjeong.translator_kmm.android.voice_to_text.presentation.components
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -20,8 +19,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.devjeong.translator_kmm.android.TranslatorTheme
 import com.devjeong.translator_kmm.android.translate.presentation.components.gradientSurface
-import kotlin.math.PI
-import kotlin.math.sin
 import kotlin.random.Random
 
 @Composable
