@@ -26,6 +26,7 @@
 		C91C61EF2AF6911500F8793F /* TranslateHistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91C61EE2AF6911500F8793F /* TranslateHistoryItem.swift */; };
 		C927A9A52B0E42A1001FAE92 /* MicrophonePowerObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C927A9A42B0E42A1001FAE92 /* MicrophonePowerObserver.swift */; };
 		C927A9A72B0E45E1001FAE92 /* IOSViceToTextParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C927A9A62B0E45E1001FAE92 /* IOSViceToTextParser.swift */; };
+		C927A9AA2B0E542A001FAE92 /* IOSVoiceToTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C927A9A92B0E542A001FAE92 /* IOSVoiceToTextViewModel.swift */; };
 		C98D7B8E2AF2996200D5EBEE /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D7B8D2AF2996200D5EBEE /* Colors.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		C91C61EE2AF6911500F8793F /* TranslateHistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateHistoryItem.swift; sourceTree = "<group>"; };
 		C927A9A42B0E42A1001FAE92 /* MicrophonePowerObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrophonePowerObserver.swift; sourceTree = "<group>"; };
 		C927A9A62B0E45E1001FAE92 /* IOSViceToTextParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSViceToTextParser.swift; sourceTree = "<group>"; };
+		C927A9A92B0E542A001FAE92 /* IOSVoiceToTextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSVoiceToTextViewModel.swift; sourceTree = "<group>"; };
 		C98D7B8D2AF2996200D5EBEE /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		E1F73CD2DA869F41B18F452A /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -172,6 +174,7 @@
 		C927A9A22B0E4270001FAE92 /* voice_to_text */ = {
 			isa = PBXGroup;
 			children = (
+				C927A9A82B0E5404001FAE92 /* presentation */,
 				C927A9A32B0E427F001FAE92 /* data */,
 			);
 			path = voice_to_text;
@@ -184,6 +187,14 @@
 				C927A9A62B0E45E1001FAE92 /* IOSViceToTextParser.swift */,
 			);
 			path = data;
+			sourceTree = "<group>";
+		};
+		C927A9A82B0E5404001FAE92 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C927A9A92B0E542A001FAE92 /* IOSVoiceToTextViewModel.swift */,
+			);
+			path = presentation;
 			sourceTree = "<group>";
 		};
 		C98D7B8B2AF298EC00D5EBEE /* core */ = {
@@ -336,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C91C61E92AF667CC00F8793F /* ProgressButton.swift in Sources */,
+				C927A9AA2B0E542A001FAE92 /* IOSVoiceToTextViewModel.swift in Sources */,
 				C927A9A52B0E42A1001FAE92 /* MicrophonePowerObserver.swift in Sources */,
 				C927A9A72B0E45E1001FAE92 /* IOSViceToTextParser.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
