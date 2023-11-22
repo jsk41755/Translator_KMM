@@ -13,6 +13,7 @@ struct TranslateScreen: View {
     private var historyDataSource: HistoryDataSource
     private var translateUseCase: Translate
     @ObservedObject var viewModel: IOSTranslateViewModel
+    private let parser = IOSVoiceToTextParser()
     
     init(historyDataSource: HistoryDataSource, translateUseCase: Translate) {
         self.historyDataSource = historyDataSource
@@ -44,6 +45,8 @@ struct TranslateScreen: View {
                         }
                     )
                 }
+                .listRowSeparator(.hidden)
+                .listRowBackground(Color.background)
                 
                 TranslateTextField(
                     fromText: Binding(get: { viewModel.state.fromText }, set: { value in
@@ -68,12 +71,12 @@ struct TranslateScreen: View {
                 }
                 
                 ForEach(viewModel.state.history, id: \.self.id) { item in
-                        TranslateHistoryItem(
-                            item: item,
-                            onClick: { viewModel.onEvent(event: TranslateEvent.SelectHistoryItem(item: item))}
-                        )
-                        .listRowSeparator(.hidden)
-                        .listRowBackground(Color.background)
+                    TranslateHistoryItem(
+                        item: item,
+                        onClick: { viewModel.onEvent(event: TranslateEvent.SelectHistoryItem(item: item))}
+                    )
+                    .listRowSeparator(.hidden)
+                    .listRowBackground(Color.background)
                 }
             }
             .listStyle(.plain)
@@ -81,7 +84,15 @@ struct TranslateScreen: View {
             
             VStack {
                 Spacer()
-                NavigationLink(destination: Text("Voice-to-text screen")){
+                NavigationLink(
+                    destination: VoiceToTextScreen(
+                        onResult: { spokenText in
+                            viewModel.onEvent(event: TranslateEvent.SubmitVoiceResult(result: spokenText))
+                        },
+                        parser: parser,
+                        languageCode: viewModel.state.fromLanguage.language.langCode
+                    )
+                ) {
                     ZStack {
                         Circle()
                             .foregroundColor(.primaryColor)

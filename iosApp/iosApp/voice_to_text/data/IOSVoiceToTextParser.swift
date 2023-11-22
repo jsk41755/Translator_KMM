@@ -11,26 +11,26 @@ import shared
 import Speech
 import Combine
 
-class IOSViceToTextParser: VoiceToTextParser, ObservableObject {
+class IOSVoiceToTextParser: VoiceToTextParser, ObservableObject {
     
     private let _state = IOSMutableStateFlow(
         initialValue: VoiceToTextParserState(result: "", error: nil, powerRatio: 0.0, isSpeaking: false)
     )
     var state: CommonStateFlow<VoiceToTextParserState> { _state }
     
-    private var micObserber = MicrophonePowerObserver()
-    var micPowerRatio: Published<Double>.Publisher { micObserber.$micPowerRatio}
+    private var micObserver = MicrophonePowerObserver()
+    var micPowerRatio: Published<Double>.Publisher { micObserver.$micPowerRatio }
     private var micPowerCancellable: AnyCancellable?
     
     private var recognizer: SFSpeechRecognizer?
     private var audioEngine: AVAudioEngine?
     private var inputNode: AVAudioInputNode?
     private var audioBufferRequest: SFSpeechAudioBufferRecognitionRequest?
-    private var recogitionTask: SFSpeechRecognitionTask?
+    private var recognitionTask: SFSpeechRecognitionTask?
     private var audioSession: AVAudioSession?
     
     func cancel() {
-        // Not need on iOS
+        // Not needed on iOS
     }
     
     func reset() {
@@ -59,7 +59,7 @@ class IOSViceToTextParser: VoiceToTextParser, ObservableObject {
                 return
             }
             
-            self?.recogitionTask = self?.recognizer?.recognitionTask(with: audioBufferRequest) { [weak self] (result, error) in
+            self?.recognitionTask = self?.recognizer?.recognitionTask(with: audioBufferRequest) { [weak self] (result, error) in
                 guard let result = result else {
                     self?.updateState(error: error?.localizedDescription)
                     return
@@ -84,7 +84,7 @@ class IOSViceToTextParser: VoiceToTextParser, ObservableObject {
                 try self?.audioSession?.setCategory(.playAndRecord, mode: .spokenAudio, options: .duckOthers)
                 try self?.audioSession?.setActive(true, options: .notifyOthersOnDeactivation)
                 
-                self?.micObserber.startObserving()
+                self?.micObserver.startObserving()
                 
                 try self?.audioEngine?.start()
                 
@@ -92,7 +92,7 @@ class IOSViceToTextParser: VoiceToTextParser, ObservableObject {
                 
                 self?.micPowerCancellable = self?.micPowerRatio
                     .sink { [weak self] ratio in
-                    self?.updateState(powerRatio: ratio)
+                        self?.updateState(powerRatio: ratio)
                     }
             } catch {
                 self?.updateState(error: error.localizedDescription, isSpeaking: false)
@@ -104,21 +104,20 @@ class IOSViceToTextParser: VoiceToTextParser, ObservableObject {
         self.updateState(isSpeaking: false)
         
         micPowerCancellable = nil
-        micObserber.release()
+        micObserver.release()
         
         audioBufferRequest?.endAudio()
         audioBufferRequest = nil
         
         audioEngine?.stop()
-        audioEngine = nil
         
         inputNode?.removeTap(onBus: 0)
-         
+        
         try? audioSession?.setActive(false)
         audioSession = nil
     }
     
-    private func requestPermissions(onGranted: @escaping() -> Void) {
+    private func requestPermissions(onGranted: @escaping () -> Void) {
         audioSession?.requestRecordPermission { [weak self] wasGranted in
             if !wasGranted {
                 self?.updateState(error: "You need to grant permission to record your voice.")
@@ -136,7 +135,6 @@ class IOSViceToTextParser: VoiceToTextParser, ObservableObject {
                 }
             }
         }
-        
     }
     
     private func updateState(result: String? = nil, error: String? = nil, powerRatio: CGFloat? = nil, isSpeaking: Bool? = nil) {
@@ -148,8 +146,5 @@ class IOSViceToTextParser: VoiceToTextParser, ObservableObject {
             isSpeaking: isSpeaking ?? currentState?.isSpeaking ?? false
         )
     }
-    
-    
-    
     
 }

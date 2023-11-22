@@ -7,8 +7,6 @@
 //
 
 import SwiftUI
-import shared
-
 struct SwapLanguageButton: View {
     var onClick: () -> Void
     var body: some View {
@@ -16,13 +14,15 @@ struct SwapLanguageButton: View {
             Image(uiImage: UIImage(named: "swap_languages")!)
                 .padding()
                 .background(Color.primaryColor)
-                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                .clipShape(Circle())
         }
     }
 }
 
-#Preview {
-    SwapLanguageButton(
-        onClick: {}
-    )
+struct SwapLanguageButton_Previews: PreviewProvider {
+    static var previews: some View {
+        SwapLanguageButton(
+            onClick: {}
+        )
+    }
 }

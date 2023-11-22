@@ -14,7 +14,7 @@ struct TranslateHistoryItem: View {
     let onClick: () -> Void
     
     var body: some View {
-        Button(action: onClick){
+        Button(action: onClick) {
             VStack(alignment: .leading) {
                 HStack {
                     SmallLanguageIcon(language: item.fromLanguage)
@@ -23,7 +23,7 @@ struct TranslateHistoryItem: View {
                         .foregroundColor(.lightBlue)
                         .font(.body)
                 }
-                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+                .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.bottom)
                 
                 HStack {
@@ -33,7 +33,6 @@ struct TranslateHistoryItem: View {
                         .foregroundColor(.onSurface)
                         .font(.body.weight(.semibold))
                 }
-                .padding()
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
             .frame(maxWidth: .infinity)
@@ -45,15 +44,17 @@ struct TranslateHistoryItem: View {
     }
 }
 
-#Preview {
-    TranslateHistoryItem(
-        item: UiHistoryItem(
-            id: 0,
-            fromText: "Hello",
-            toText: "Hallo",
-            fromLanguage: UiLanguage(language: .english, imageName: "english"),
-            toLanguage: UiLanguage(language: .german, imageName: "german")
-        ),
-        onClick: {}
-    )
+struct TranslateHistoryItem_Previews: PreviewProvider {
+    static var previews: some View {
+        TranslateHistoryItem(
+            item: UiHistoryItem(
+                id: 0,
+                fromText: "Hello",
+                toText: "Hallo",
+                fromLanguage: UiLanguage(language: .english, imageName: "english"),
+                toLanguage: UiLanguage(language: .german, imageName: "german")
+            ),
+            onClick: {}
+        )
+    }
 }

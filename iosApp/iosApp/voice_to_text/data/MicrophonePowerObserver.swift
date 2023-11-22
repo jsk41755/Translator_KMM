@@ -14,7 +14,7 @@ import Combine
 class MicrophonePowerObserver: ObservableObject {
     private var cancellable: AnyCancellable? = nil
     private var audioRecorder: AVAudioRecorder? = nil
-
+    
     @Published private(set) var micPowerRatio = 0.0
     
     private let powerRatioEmissionsPerSecond = 20.0
@@ -50,7 +50,7 @@ class MicrophonePowerObserver: ObservableObject {
                 }
             }
         } catch {
-            print("An error occured when observing micropohone power: \(error.localizedDescription)")
+            print("An error occurred when observing microphone power: \(error.localizedDescription)")
         }
     }
     
