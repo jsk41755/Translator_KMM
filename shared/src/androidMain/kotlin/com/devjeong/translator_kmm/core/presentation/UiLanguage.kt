@@ -6,7 +6,7 @@ import com.devjeong.translator_kmm.core.domain.language.Language
 import kotlinx.coroutines.awaitAll
 import java.util.Locale
 
-actual class UiLanguage(
+actual data class UiLanguage(
     @DrawableRes val drawableRes: Int,
     actual val language: Language
 ) {
